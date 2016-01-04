@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.speedhao.blogmanage.dao.ParamValueDao">
+
+    <resultMap id="pvMap" type="ParamValue">  
+        <id column="id" property="id" />  
+        <result column="param_name" property="param_name" />  
+        <result column="param_code" property="param_code" />
+        <result column="param_value" property="param_value" />
+        <result column="del_flag" property="del_flag" />
+    </resultMap>
+    
+    <select id="selectPV" parameterType="ParamValue" resultMap="pvMap" >  
+        select * from sys_params 
+        	where param_name = #{param_name} 
+        	and param_code = #{param_code} 
+        	and del_falg = '0'
+    </select>
+    
+    <select id="selectCV" parameterType="ParamValue" resultMap="pvMap" >  
+        select * from sys_params 
+        	where param_name = #{param_name} 
+        	and del_falg = '0'
+    </select>
+</mapper>

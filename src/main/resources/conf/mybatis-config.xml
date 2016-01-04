@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 命名空间 -->
+	<typeAliases>
+		<typeAlias alias="User" type="com.speedhao.blogmanage.model.User"/>
+		<typeAlias alias="Blog" type="com.speedhao.blogmanage.model.Blog"/>
+		<typeAlias alias="ParamValue" type="com.speedhao.blogmanage.model.ParamValue"/>
+	</typeAliases>
+ 
+    <!-- 映射map -->
+    <mappers>
+    </mappers>
+</configuration>

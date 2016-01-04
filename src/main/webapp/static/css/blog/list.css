@@ -1,0 +1,86 @@
+body
+{
+	padding: 10px 20px;
+	font-size: 16px;
+}
+
+.query_div
+{
+	width: 100%;
+	height:50px;
+	border: 1px solid gray;
+	line-height: 50px;
+}
+
+.query_div span
+{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.query_div lable
+{
+
+}
+
+.query_div input
+{
+	min-width: 150px;
+	height: 25px;
+	font-size: 17px;
+	border: 1px solid gray;
+}
+
+.query_div select
+{
+	min-width: 150px;
+	font-size: 16px;
+	border: 1px solid gray;
+	height: 30px;
+	padding: 5px 5px;
+}
+
+#query_button
+{
+	cursor: pointer;
+}
+
+.blog_table
+{
+	border: 1px solid gray;
+	width: 100%;
+	margin-top: 10px;
+	font-size: 12px;
+}
+
+.blog_table th,td
+{
+	margin:0;
+	padding:0;
+	text-align: center;
+	border-top: 1px solid gray;
+	border-left: 1px solid gray;
+	border-right: none;
+	border-bottom: none;
+}
+.blog_table th:first-child,td:first-child
+{
+	border-left:none;
+}
+
+.blog_table tr:first-child th
+{
+	border-top:none;
+}
+
+.blog_table tr
+{
+	line-height: 30px;
+}
+
+.blog_table td span
+{
+	cursor: pointer;
+	margin-left: 5px;
+	margin-right: 5px;
+}

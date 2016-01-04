@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.speedhao.blogmanage.dao.BlogDao">
+
+	<!-- 数据库与java对象映射 -->
+    <resultMap id="blogMap" type="Blog">  
+        <id column="id" property="id" />  
+        <result column="title" property="title" />  
+        <result column="content" property="content" />
+        <result column="keywords" property="keywords" />
+        <result column="description" property="description" />
+        <result column="create_time" property="create_time" />
+        <result column="view_count" property="view_count" />
+        <result column="up_count" property="up_count" />
+        <result column="type" property="type" />
+        <result column="del_flag" property="del_flag" />
+    </resultMap>
+    
+    <!-- 条件查询博客 -->
+    <select id="selectBlog" parameterType="map" resultMap="blogMap" >
+        select * from blogs where 
+	        <if test="title != null">
+	    		title like CONCAT('%', #{title},'%') and 
+	    	</if>
+	    	<if test="type != null">
+	    		<if test="type != 0">
+	    			type=#{type} and 
+	    		</if>
+	    	</if>
+        1=1 
+        order by id desc 
+        limit #{page},#{size}
+    </select>
+    
+    <!-- 查询单个 -->
+    <select id="getBlog" parameterType="Blog" resultMap="blogMap">
+    	select * from blogs 
+    	where id=#{id}
+    </select>
+    
+    <!-- 统计博客数量 -->
+    <select id="countBlog" parameterType="Blog" resultType="java.lang.Integer">
+    	select COUNT(*) from blogs where 
+    	<if test="title != null">
+    		title like CONCAT('%', #{title},'%') and 
+    	</if>
+    	<if test="type != null">
+	    	<if test="type != 0">
+	    		type=#{type} and 
+	    	</if>
+    	</if>
+    	1=1
+    </select>
+    
+    <!-- 插入博客 -->
+	<insert id="insertBlog" parameterType="Blog" keyProperty="id">
+		insert into blogs(
+			title,
+			content,
+			keywords,
+			description,
+			create_time,
+			type,
+			del_flag
+		)
+		values(
+			#{title},
+			#{content},
+			#{keywords},
+			#{description},
+			#{create_time},
+			#{type},
+			#{del_flag}
+		)
+	</insert>
+	
+	<!-- 逻辑删除博客 -->
+	<update id="delBlog" parameterType="Blog">
+		update blogs 
+		set del_flag='1' 
+		where id=#{id}
+	</update>
+	
+	<!-- 发布博客 -->
+	<update id="openBlog" parameterType="Blog">
+		update blogs 
+		set del_flag='0' 
+		where id=#{id}
+	</update>
+	
+	<!-- 更新博客内容 -->
+	<update id="updateBlog" parameterType="Blog">
+		update blogs 
+		set title=#{title},
+			content=#{content},
+			keywords=#{keywords},
+			description=#{description},
+			type=#{type} 
+		where id=#{id}
+	</update>
+	
+</mapper>

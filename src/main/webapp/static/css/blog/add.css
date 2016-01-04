@@ -1,0 +1,66 @@
+body
+{
+	padding: 10px 20px;
+}
+
+.blog_info_div
+{
+	height: 200px;
+	border: 1px solid gray;
+	margin-bottom: 10px;
+	color:#4B4B4B;
+}
+
+.blog_info_div p
+{
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+.blog_info_div p lable
+{
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+	font-weight: bolder;
+}
+
+.blog_info_div p input
+{
+	min-width: 550px;
+	height: 28px;
+	font-size: 17px;
+	border: 1px solid gray;
+	color:#4B4B4B;
+}
+
+.blog_info_div p select
+{
+	min-width: 150px;
+	font-size: 16px;
+	border: 1px solid gray;
+	height: 30px;
+	padding: 5px 5px;
+	color:#4B4B4B;
+}
+
+.blog_info_div p a
+{
+	display: inline-block;
+	border: 1px solid #ccc;
+	background-color: #f0f0f0;
+	color: #555;
+	font-size: 15px;
+	height: 28px;
+	line-height: 28px;
+	margin-left: 6px;
+	padding: 0 10px;
+	text-align: center;
+}
+
+.blog_info_div p a:hover
+{
+	background-color: #3a8dcc;
+	border-color: #3a8dcc;
+	color: #fff;
+}

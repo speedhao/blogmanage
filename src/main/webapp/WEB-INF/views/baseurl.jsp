@@ -1,0 +1,1 @@
+<base href="http://haoyu:8080/blogmanage/">
